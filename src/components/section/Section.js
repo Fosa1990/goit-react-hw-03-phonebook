@@ -15,6 +15,7 @@ const Section = ({ children, className }) => {
 };
 
 Section.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node,
 };
 

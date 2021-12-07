@@ -21,6 +21,7 @@ Title.defaultProps = {
 };
 
 Title.propTypes = {
+  className: PropTypes.string,
   title: PropTypes.string,
 };
 
