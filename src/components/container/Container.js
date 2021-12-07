@@ -6,8 +6,12 @@ export const ContainerWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Container = ({ children }) => {
-  return <ContainerWrapper>{children}</ContainerWrapper>;
+const Container = ({ children, className }) => {
+  return className ? (
+    <ContainerWrapper className={className}>{children}</ContainerWrapper>
+  ) : (
+    <ContainerWrapper>{children}</ContainerWrapper>
+  );
 };
 
 Container.propTypes = {

@@ -6,8 +6,12 @@ export const SectionWrapper = styled.section`
   margin: 0;
 `;
 
-const Section = ({ children }) => {
-  return <SectionWrapper>{children}</SectionWrapper>;
+const Section = ({ children, className }) => {
+  return className ? (
+    <SectionWrapper className={className}> {children}</SectionWrapper>
+  ) : (
+    <SectionWrapper>{children}</SectionWrapper>
+  );
 };
 
 Section.propTypes = {

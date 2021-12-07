@@ -8,8 +8,12 @@ export const TitleH2 = styled.h2`
   text-align: center;
 `;
 
-const Title = ({ title }) => {
-  return <TitleH2>{title}</TitleH2>;
+const Title = ({ title, className }) => {
+  return className ? (
+    <TitleH2 className={className}>{title}</TitleH2>
+  ) : (
+    <TitleH2>{title}</TitleH2>
+  );
 };
 
 Title.defaultProps = {
