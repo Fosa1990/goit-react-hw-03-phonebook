@@ -1,19 +1,33 @@
+import React, { Component } from 'react';
 import Section from './components/section';
 import Container from './components/container';
 import Form from './components/form';
-import Contacts from './components/contacts';
 import Filter from './components/filter';
+import Contacts from './components/contacts';
 import dataGenerator from './helpers/dataGenerator';
 import contactsData from './data/contacts.json';
 import { nanoid } from 'nanoid';
-
-import React, { Component } from 'react';
 
 export class App extends Component {
   state = {
     contacts: dataGenerator(contactsData),
     filter: '',
   };
+
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+
+    if (parsedContacts) this.setState({ contacts: parsedContacts });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const nextContacts = this.state.contacts;
+    const prevContacts = prevState.contacts;
+
+    if (nextContacts !== prevContacts)
+      localStorage.setItem('contacts', JSON.stringify(nextContacts));
+  }
 
   formSubmitHandler = data => {
     const { contacts } = this.state;
