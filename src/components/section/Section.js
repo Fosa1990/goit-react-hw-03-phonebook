@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const SectionWrapper = styled.section`
+export const SectionWrapper = styled.section`
   padding: 0 20px;
   margin: 0;
 `;
 
-const SectionTitle = styled.h2`
+export const SectionTitle = styled.h2`
   color: var(--yellow);
   font-size: 32px;
   font-family: var(--big);

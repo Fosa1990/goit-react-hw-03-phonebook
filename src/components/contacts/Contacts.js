@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const ListItem = styled.li`
+export const ListItem = styled.li`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -24,7 +24,7 @@ const ListItem = styled.li`
   }
 `;
 
-const ButtonDelete = styled.button`
+export const ButtonDelete = styled.button`
   margin: 5px 0 5px 10px;
   border: 1px solid rgb(255, 252, 252);
   box-shadow: 0.7px 0.7px 0.75px rgb(173, 172, 172);

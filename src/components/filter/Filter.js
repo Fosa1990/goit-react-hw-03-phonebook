@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Label = styled.label`
+export const Label = styled.label`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const Title = styled.p`
+export const Title = styled.p`
   margin: 5px 0;
   color: var(--white);
   font-family: var(--font);
@@ -15,11 +15,11 @@ const Title = styled.p`
   line-height: 1.5;
 `;
 
-const Span = styled.span`
+export const Span = styled.span`
   color: var(--yellow);
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   color: var(--blue);
 `;
 

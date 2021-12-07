@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const MainForm = styled.form`
+export const MainForm = styled.form`
   padding: 5px;
   margin: 0 auto;
   width: 250px;
   font-family: var(--font);
 `;
 
-const FormAddContactButton = styled.button`
+export const FormAddContactButton = styled.button`
   margin: 0;
   width: 100%;
   border: 1px solid rgb(255, 252, 252);
@@ -37,14 +37,14 @@ const FormAddContactButton = styled.button`
   }
 `;
 
-const FormLabel = styled.label`
+export const FormLabel = styled.label`
   margin: 0 0 2px 0;
   font-family: var(--font);
   font-size: 18px;
   font-weight: 600;
 `;
 
-const FormInput = styled.input`
+export const FormInput = styled.input`
   padding: 5px 20px;
   margin-bottom: 20px;
   width: 100%;
