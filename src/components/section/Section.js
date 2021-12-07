@@ -6,28 +6,11 @@ export const SectionWrapper = styled.section`
   margin: 0;
 `;
 
-export const SectionTitle = styled.h2`
-  color: var(--yellow);
-  font-size: 32px;
-  font-family: var(--big);
-  text-align: center;
-`;
-
-const Section = ({ title, children }) => {
-  return (
-    <SectionWrapper>
-      <SectionTitle>{title}</SectionTitle>
-      {children}
-    </SectionWrapper>
-  );
-};
-
-Section.defaultProps = {
-  title: 'Section title',
+const Section = ({ children }) => {
+  return <SectionWrapper>{children}</SectionWrapper>;
 };
 
 Section.propTypes = {
-  title: PropTypes.string,
   children: PropTypes.node,
 };
 
