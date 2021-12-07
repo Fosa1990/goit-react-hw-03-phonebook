@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Section from './components/section';
 import Container from './components/container';
+import Title from './components/title';
 import Form from './components/form';
 import Filter from './components/filter';
 import Contacts from './components/contacts';
@@ -77,15 +78,12 @@ export class App extends Component {
     const filteredContacts = this.getFiltredContacts();
 
     return (
-      <>
-        <Section title="Phonebook">
-          <Container>
-            <Form onSubmit={this.formSubmitHandler} />
-          </Container>
-        </Section>
+      <Fragment>
+        <Form onSubmit={this.formSubmitHandler} />
 
-        <Section title="Contacts">
+        <Section>
           <Container>
+            <Title title="Contacts" />
             <Filter value={filter} onChange={this.handleSearch} />
             <Contacts
               contacts={filteredContacts}
@@ -93,7 +91,7 @@ export class App extends Component {
             />
           </Container>
         </Section>
-      </>
+      </Fragment>
     );
   }
 }
