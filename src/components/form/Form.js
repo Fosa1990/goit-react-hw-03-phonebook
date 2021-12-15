@@ -4,56 +4,6 @@ import Section from '../section';
 import Container from '../container';
 import Title from '../title';
 
-export const MainForm = styled.form`
-  padding: 5px;
-  margin: 0 auto;
-  width: 250px;
-  font-family: var(--font);
-`;
-
-export const FormAddContactButton = styled.button`
-  margin: 0;
-  width: 100%;
-  border: 1px solid rgb(255, 252, 252);
-  box-shadow: 0.7px 0.7px 0.75px rgb(173, 172, 172);
-  border-radius: 10px;
-  background-color: rgb(245, 250, 245);
-  padding: 5px 20px;
-
-  font-family: var(--font);
-  font-size: 14px;
-  font-weight: 600;
-  transition: all 250ms ease-in;
-
-  :hover {
-    cursor: pointer;
-    color: var(--white);
-    background-color: var(--green);
-    border: 1px solid var(--blue);
-  }
-
-  :disabled:hover {
-    cursor: not-allowed;
-    color: var(--red);
-    background-color: var(--white);
-    border: 1px solid var(--red);
-  }
-`;
-
-export const FormLabel = styled.label`
-  margin: 0 0 2px 0;
-  font-family: var(--font);
-  font-size: 18px;
-  font-weight: 600;
-`;
-
-export const FormInput = styled.input`
-  padding: 5px 20px;
-  margin-bottom: 20px;
-  width: 100%;
-  border-radius: 10px;
-`;
-
 class Form extends Component {
   state = {
     name: '',
@@ -66,9 +16,10 @@ class Form extends Component {
   };
 
   handleFormSubmit = event => {
+    const { onSubmit } = this.props;
     event.preventDefault();
 
-    this.props.onSubmit(this.state);
+    onSubmit(this.state);
     this.handleReset();
   };
 
@@ -129,5 +80,55 @@ class Form extends Component {
     );
   }
 }
+
+export const MainForm = styled.form`
+  padding: 5px;
+  margin: 0 auto;
+  width: 250px;
+  font-family: var(--font);
+`;
+
+export const FormAddContactButton = styled.button`
+  margin: 0;
+  width: 100%;
+  border: 1px solid rgb(255, 252, 252);
+  box-shadow: 0.7px 0.7px 0.75px rgb(173, 172, 172);
+  border-radius: 10px;
+  background-color: rgb(245, 250, 245);
+  padding: 5px 20px;
+
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 250ms ease-in;
+
+  :hover {
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--green);
+    border: 1px solid var(--blue);
+  }
+
+  :disabled:hover {
+    cursor: not-allowed;
+    color: var(--red);
+    background-color: var(--white);
+    border: 1px solid var(--red);
+  }
+`;
+
+export const FormLabel = styled.label`
+  margin: 0 0 2px 0;
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 600;
+`;
+
+export const FormInput = styled.input`
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+`;
 
 export default Form;
